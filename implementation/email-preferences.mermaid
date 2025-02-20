@@ -1,0 +1,50 @@
+graph TD
+    subgraph User Preferences
+        A[Email Settings Page]
+        B[Notification Types]
+        C[Frequency Settings]
+    end
+
+    subgraph Notification Types
+        D[Welcome Emails]
+        E[Post Reminders]
+        F[Weekly Reports]
+        G[AI Content Delivery]
+    end
+
+    subgraph Frequency Options
+        H[Immediate]
+        I[Daily Digest]
+        J[Weekly Summary]
+    end
+
+    subgraph Storage
+        K[Preferences Table]
+        L[Email Logs Table]
+    end
+
+    A --> B
+    A --> C
+    B --> D
+    B --> E
+    B --> F
+    B --> G
+    C --> H
+    C --> I
+    C --> J
+    B --> K
+    C --> K
+    D --> L
+    E --> L
+    F --> L
+    G --> L
+    
+    classDef prefs fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef types fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef freq fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef store fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    
+    class A,B,C prefs
+    class D,E,F,G types
+    class H,I,J freq
+    class K,L store
