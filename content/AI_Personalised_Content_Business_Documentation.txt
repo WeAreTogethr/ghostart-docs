@@ -1,0 +1,99 @@
+
+# AI-Personalised Content Business - Full Project Documentation
+
+## 1. Technical Roadmap
+Updated Technical Roadmap: Integrating AI-Personalised Content into Employee Advocacy Accelerator
+
+Objective:
+To integrate AI-personalised content generation into the existing Employee Advocacy Accelerator platform, leveraging the exercises framework to store user preferences and personalise content templates.
+
+- Expanding the Exercises Framework for AI Personalisation
+- AI-Powered Content Personalisation Workflow
+- Database & Backend Adjustments (Supabase)
+- Frontend Adjustments (Next.js & Vercel)
+- Payment & Subscription Handling (Stripe API)
+- Automating AI Workflows (Without Zapier)
+- Deployment & Testing Plan
+
+(Full details from technical roadmap)
+
+## 2. Technical Specification
+Technical Specification: AI-Personalised Content System
+
+Objective:
+To outline the technology stack, integrations, and automation required to deliver AI-personalised content efficiently using Supabase, Next.js (App Router), Vercel, and Stripe—without third-party platforms like Zapier or Gumroad.
+
+- Core Components & Tech Stack
+- Workflow & Automation
+- Integrations & API Requirements
+- Security & Compliance Considerations
+
+(Full details from technical specification)
+
+## 3. Development Roadmap
+Development Roadmap: Building AI-Personalised Content System
+
+Objective:
+To build a fully automated AI-personalised content platform using Supabase, Vercel (Next.js), Stripe, and OpenAI—without relying on external platforms like Zapier or Gumroad.
+
+- Step-by-Step Build Plan
+- AI Personalisation Workflow
+- Final Deliverables & Timeline
+
+(Full details from development roadmap)
+
+## 4. Shop & E-commerce Integration
+Shop and Other Bits - E-commerce & Automation
+
+- Supabase for user authentication & storing purchases
+- Next.js for handling purchases
+- Automating Workflows Without Zapier or Make
+- Payment & Subscription Handling Without Third-Party Tools
+
+(Full details from e-commerce integration plan)
+
+## 5. Pricing Model
+Pricing Model: One-Time vs Subscription
+
+- One-Time Purchase Pricing
+- Subscription Pricing Model
+- Hybrid Pricing Strategy (Recommended Approach)
+
+(Full details from pricing model)
+
+## 6. Summary Action Plan
+Action Plan: AI-Personalised Digital Content Business
+
+Overview:
+Step-by-step process to build and launch the AI-personalised content business, ensuring first revenue within 4 weeks and scaling towards €1M in 12 months.
+
+- Validation & Initial Revenue
+- Scaling to Recurring Revenue
+- Scaling to €1M
+
+(Full details from action plan)
+
+## 7. Project Overview
+Project Overview: AI-Personalised Digital Content Business
+
+Goal:
+Build a scalable, AI-powered digital product business that generates €1M+ in 12 months.
+
+- Business Model
+- How It Works
+- Example Product Breakdown
+- Next Steps
+
+(Full details from project overview)
+
+## 8. Subscription Model Strategy
+AI-Powered Digital Asset Subscription Business
+
+Goal:
+Build a scalable digital product business leveraging AI to create high-value, instantly sellable digital assets.
+
+- Primary Revenue Streams
+- Execution Plan
+- Scale to €1M Strategy
+
+(Full details from subscription model strategy)
