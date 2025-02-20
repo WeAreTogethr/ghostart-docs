@@ -1,0 +1,40 @@
+sequenceDiagram
+    participant U as User
+    participant F as Frontend
+    participant Q as Redis Queue
+    participant W as Email Worker
+    participant R as Resend
+    participant S as Supabase
+    
+    rect rgb(240, 248, 255)
+        Note over U,S: Welcome Email Flow
+        U->>F: Sign Up
+        F->>S: Create Account
+        F->>Q: Queue Welcome Email
+        Q->>W: Process Email Job
+        W->>S: Check Preferences
+        W->>R: Send Welcome Email
+        W->>S: Log Email Sent
+    end
+    
+    rect rgb(255, 240, 245)
+        Note over U,S: Scheduled Content Email
+        F->>Q: Schedule Post
+        Q->>W: Pre-Post Reminder
+        W->>S: Check Preferences
+        alt Notifications Enabled
+            W->>R: Send Reminder
+            W->>S: Log Email
+        else Notifications Disabled
+            W->>S: Skip & Log
+        end
+    end
+    
+    rect rgb(240, 255, 240)
+        Note over U,S: Weekly Analytics
+        Q->>W: Weekly Report Due
+        W->>S: Fetch Analytics
+        W->>S: Check Preferences
+        W->>R: Send Report
+        W->>S: Log Report Sent
+    end
