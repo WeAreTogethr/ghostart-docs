@@ -1,0 +1,28 @@
+sequenceDiagram
+    participant U as User
+    participant D as Dashboard
+    participant F as Features
+    participant UP as Upgrade Prompts
+    
+    rect rgb(240, 248, 255)
+        Note over U,UP: Full Access View
+        U->>D: Load Dashboard
+        D->>F: Load All Features
+        F-->>U: Show Complete Dashboard
+    end
+    
+    rect rgb(255, 240, 245)
+        Note over U,UP: Limited Access
+        U->>D: Load Dashboard
+        D->>F: Load Available Features
+        D->>UP: Load Upgrade Options
+        F-->>U: Show Available Features
+        UP-->>U: Show Upgrade Paths
+    end
+    
+    rect rgb(240, 255, 240)
+        Note over U,UP: Feature Preview
+        U->>F: Preview Locked Feature
+        F->>UP: Show Feature Benefits
+        UP-->>U: Display Upgrade CTA
+    end
