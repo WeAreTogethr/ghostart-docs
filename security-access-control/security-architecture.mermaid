@@ -1,0 +1,44 @@
+graph TD
+    subgraph Authentication
+        A[OAuth Flow]
+        B[Token Management]
+        C[RLS Policies]
+    end
+
+    subgraph Token Storage
+        D[HTTP-Only Cookies]
+        E[Encrypted DB Fields]
+        F[Refresh Tokens]
+    end
+
+    subgraph RLS Implementation
+        G[User Data Policies]
+        H[Brand Content Policies]
+        I[Content Access Rules]
+    end
+
+    subgraph Organization Control
+        J[Org-Based Access]
+        K[Role Permissions]
+        L[Brand Manager Rights]
+    end
+
+    A --> D
+    A --> E
+    B --> F
+    C --> G
+    C --> H
+    C --> I
+    G --> J
+    H --> K
+    I --> L
+
+    classDef auth fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef storage fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef rls fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef org fill:#fff3e0,stroke:#e65100,stroke-width:2px
+
+    class A,B,C auth
+    class D,E,F storage
+    class G,H,I rls
+    class J,K,L org

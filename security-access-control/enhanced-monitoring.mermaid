@@ -1,0 +1,49 @@
+graph TD
+    subgraph Metrics Collection
+        A[User Activity]
+        B[Content Generation]
+        C[Brand Content Usage]
+        D[System Performance]
+    end
+
+    subgraph Performance Tracking
+        E[Beige-ometer Trends]
+        F[API Response Times]
+        G[Error Rates]
+        H[Resource Usage]
+    end
+
+    subgraph Analytics Dashboard
+        I[User Metrics]
+        J[Content Quality]
+        K[Brand Engagement]
+        L[System Health]
+    end
+
+    subgraph Alert System
+        M[Error Notifications]
+        N[Performance Alerts]
+        O[Security Alerts]
+        P[Usage Thresholds]
+    end
+
+    A --> I
+    B --> J
+    C --> K
+    D --> L
+    E --> J
+    F --> L
+    G --> M
+    H --> N
+    K --> O
+    L --> P
+
+    classDef collection fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef tracking fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef dashboard fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef alerts fill:#fff3e0,stroke:#e65100,stroke-width:2px
+
+    class A,B,C,D collection
+    class E,F,G,H tracking
+    class I,J,K,L dashboard
+    class M,N,O,P alerts

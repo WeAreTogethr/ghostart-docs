@@ -1,0 +1,45 @@
+graph TD
+    subgraph Core Features
+        A[Post Writing Section]
+        B[Content Calendar]
+        C[Training Bank]
+        D[AI Exercises]
+        E[Dashboard]
+        F[Settings]
+    end
+
+    subgraph Post Writing Components
+        A1[LinkedIn Preview]
+        A2[Audience Selection]
+        A3[Post Type Selection]
+        A4[Templates]
+        A5[Beige-ometer]
+        A6[Hook Generation]
+        A7[Sandpit Tools]
+    end
+
+    subgraph Sandpit Features
+        S1[Brand Content]
+        S2[Ideas Bank]
+        S3[Generate Ideas]
+        S4[Content Calendar]
+    end
+
+    subgraph Integration Points
+        I1[LinkedIn API]
+        I2[OpenAI]
+        I3[Supabase]
+        I4[Stripe]
+        I5[Resend]
+    end
+
+    A --> A1 & A2 & A3 & A4 & A5 & A6 & A7
+    A7 --> S1 & S2 & S3 & S4
+    
+    classDef covered fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef partial fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    
+    class A,B,C,D,E,F covered
+    class A1,A2,A3,A4,A5,A6,A7 covered
+    class S1,S2,S3,S4 covered
+    class I1,I2,I3,I4,I5 covered

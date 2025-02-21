@@ -1,0 +1,34 @@
+sequenceDiagram
+    participant U as User
+    participant A as Auth System
+    participant D as Database
+    participant B as Brand Content
+    
+    rect rgb(240, 248, 255)
+        Note over U,B: User Data Access
+        U->>A: Request Data Access
+        A->>D: Check RLS Policies
+        alt Own Data
+            D-->>U: Grant Full Access
+        else Organization Data
+            D-->>U: Grant Read-Only
+        else Other Data
+            D-->>U: Access Denied
+        end
+    end
+    
+    rect rgb(255, 240, 245)
+        Note over U,B: Brand Content Access
+        U->>B: Request Brand Content
+        A->>D: Check Org Membership
+        alt Same Organization
+            D->>D: Check Role
+            alt Admin/Creator
+                D-->>U: Full Access
+            else Regular Member
+                D-->>U: View-Only Access
+            end
+        else Different Organization
+            D-->>U: Access Denied
+        end
+    end
