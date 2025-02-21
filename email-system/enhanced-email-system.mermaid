@@ -1,0 +1,45 @@
+graph TD
+    subgraph Email Management
+        A[Email Preferences]
+        B[Unsubscribe Handler]
+        C[Error Recovery]
+    end
+
+    subgraph Unsubscribe Methods
+        D[Email Footer Link]
+        E[User Settings Panel]
+        F[One-Click Unsubscribe]
+    end
+
+    subgraph Error Handling
+        G[LinkedIn API Retry]
+        H[Exponential Backoff]
+        I[Error Logging]
+    end
+
+    subgraph Database
+        J[Supabase - User Profile]
+        K[Email Logs]
+        L[Error Tracking]
+    end
+
+    A --> J
+    B --> D
+    B --> E
+    B --> F
+    D --> J
+    E --> J
+    F --> J
+    G --> H
+    H --> I
+    I --> L
+    
+    classDef email fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef unsub fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef error fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+    classDef db fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    
+    class A,B,C email
+    class D,E,F unsub
+    class G,H,I error
+    class J,K,L db

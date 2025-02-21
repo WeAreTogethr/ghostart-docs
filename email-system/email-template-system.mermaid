@@ -1,0 +1,32 @@
+graph TD
+    subgraph Template Types
+        A[Onboarding Emails]
+        B[Performance Updates]
+        C[System Notifications]
+        D[Error Alerts]
+    end
+
+    subgraph Components
+        E[Header Layout]
+        F[Content Blocks]
+        G[Action Buttons]
+        H[Footer Elements]
+    end
+
+    subgraph Dynamic Content
+        I[User Data]
+        J[Post Metrics]
+        K[Time-based Content]
+        L[Conditional Blocks]
+    end
+
+    A & B & C & D --> E & F & G & H
+    E & F & G & H --> I & J & K & L
+
+    classDef types fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef components fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef dynamic fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+
+    class A,B,C,D types
+    class E,F,G,H components
+    class I,J,K,L dynamic
