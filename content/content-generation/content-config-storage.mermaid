@@ -1,0 +1,45 @@
+graph TD
+    subgraph Supabase Tables
+        A[content_scoring_thresholds]
+        B[generic_templates]
+        C[exercise_weights]
+        D[fallback_content]
+    end
+
+    subgraph Threshold Config
+        A1[Score Ranges]
+        A2[Category Weights]
+        A3[Update History]
+    end
+
+    subgraph Templates
+        B1[Emergency Templates]
+        B2[Generic Posts]
+        B3[Industry Templates]
+    end
+
+    subgraph Weights
+        C1[Exercise Importance]
+        C2[Category Impact]
+        C3[Minimum Requirements]
+    end
+
+    A --> A1
+    A --> A2
+    A --> A3
+    B --> B1
+    B --> B2
+    B --> B3
+    C --> C1
+    C --> C2
+    C --> C3
+
+    classDef tables fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef config fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef templates fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef weights fill:#fff3e0,stroke:#e65100,stroke-width:2px
+
+    class A,B,C,D tables
+    class A1,A2,A3 config
+    class B1,B2,B3 templates
+    class C1,C2,C3 weights

@@ -1,0 +1,54 @@
+graph TD
+    subgraph Scoring Components
+        A[Total Score Calculation]
+        B[Personalization 40%]
+        C[Engagement 35%]
+        D[Tone 25%]
+    end
+
+    subgraph Personalization Metrics
+        B1[User Stories 15%]
+        B2[Audience Match 15%]
+        B3[Role Relevance 10%]
+    end
+
+    subgraph Engagement Factors
+        C1[Hook Strength 15%]
+        C2[Trending Topics 10%]
+        C3[Unique Insights 10%]
+    end
+
+    subgraph Tone Analysis
+        D1[Voice Consistency 15%]
+        D2[Language Quality 10%]
+    end
+
+    subgraph Score Thresholds
+        E[0-20: Beige]
+        F[21-40: Yellow]
+        G[41-60: Light Green]
+        H[61-80: Green]
+        I[81-100: Ultra Green]
+    end
+
+    A --> B
+    A --> C
+    A --> D
+    B --> B1
+    B --> B2
+    B --> B3
+    C --> C1
+    C --> C2
+    C --> C3
+    D --> D1
+    D --> D2
+
+    classDef main fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef metrics fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef factors fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef thresholds fill:#fff3e0,stroke:#e65100,stroke-width:2px
+
+    class A main
+    class B,C,D metrics
+    class B1,B2,B3,C1,C2,C3,D1,D2 factors
+    class E,F,G,H,I thresholds

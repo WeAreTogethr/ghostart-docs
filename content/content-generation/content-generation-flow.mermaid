@@ -1,0 +1,48 @@
+sequenceDiagram
+    participant U as User
+    participant S as System
+    participant AI as AI Service
+    participant F as Fallback System
+    participant M as Monitoring
+
+    rect rgb(240, 248, 255)
+        Note over U,M: Exercise Check
+        U->>S: Request Content Generation
+        S->>S: Check Exercise Completion
+        alt No Exercises Done
+            S-->>U: Show Exercise Prompt
+            S->>AI: Generate Generic Template
+        else Partial Exercises
+            S-->>U: Show Completion Reminder
+            S->>AI: Generate Semi-Personalized
+        else All Exercises Done
+            S->>AI: Generate Fully Personalized
+        end
+    end
+
+    rect rgb(255, 240, 245)
+        Note over U,M: AI Generation
+        alt AI Success
+            AI-->>S: Return Content
+            S->>S: Calculate Beige Score
+            S-->>U: Display Content + Score
+        else AI Timeout
+            AI-->>F: Trigger Fallback
+            F->>S: Use Generic Template
+            S-->>U: Show Limited Features Notice
+        else AI Error
+            AI-->>M: Log Error
+            F->>S: Use Emergency Template
+            S-->>U: Show Error Message
+        end
+    end
+
+    rect rgb(240, 255, 240)
+        Note over U,M: Quality Check
+        S->>S: Check Beige Score
+        alt Score < 40
+            S-->>U: Show Improvement Tips
+        else Score > 80
+            S-->>U: Show Success Badge
+        end
+    end
