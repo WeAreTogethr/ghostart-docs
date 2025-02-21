@@ -1,0 +1,32 @@
+graph TD
+    subgraph Overview Dashboard
+        A[Performance Summary]
+        B[Trend Charts]
+        C[Post Comparison]
+        D[Time Range Selector]
+    end
+
+    subgraph Chart Types
+        B1[Growth Line Chart]
+        B2[Engagement Bar Chart]
+        B3[Time Distribution]
+        B4[Post Performance Heatmap]
+    end
+
+    subgraph Metrics Display
+        E[Total Metrics]
+        F[Average Metrics]
+        G[Best Performing]
+        H[Growth Rate]
+    end
+
+    A --> E & F & G & H
+    B --> B1 & B2 & B3 & B4
+
+    classDef overview fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef charts fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef metrics fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+
+    class A,B,C,D overview
+    class B1,B2,B3,B4 charts
+    class E,F,G,H metrics

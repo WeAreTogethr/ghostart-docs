@@ -1,0 +1,42 @@
+graph TD
+    subgraph System Health
+        A[API Status]
+        B[Error Rates]
+        C[Response Times]
+        D[Resource Usage]
+    end
+
+    subgraph User Activity
+        E[Active Users]
+        F[Post Volume]
+        G[Exercise Completion]
+        H[Engagement Rates]
+    end
+
+    subgraph Content Stats
+        I[Queue Status]
+        J[Publishing Success]
+        K[Failed Posts]
+        L[Retry Queue]
+    end
+
+    subgraph Admin Tools
+        M[User Management]
+        N[Org Settings]
+        O[Template Editor]
+        P[System Config]
+    end
+
+    A & B & C & D --> M
+    E & F & G & H --> N
+    I & J & K & L --> O & P
+
+    classDef health fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef activity fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef content fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef admin fill:#fff3e0,stroke:#e65100,stroke-width:2px
+
+    class A,B,C,D health
+    class E,F,G,H activity
+    class I,J,K,L content
+    class M,N,O,P admin

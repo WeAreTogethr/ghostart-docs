@@ -1,0 +1,41 @@
+graph TD
+    subgraph Post Card
+        A[Post Preview]
+        B[Quick Stats]
+        C[Update Button]
+    end
+
+    subgraph Update Modal
+        D[Metric Inputs]
+        E[Time Selection]
+        F[Save Actions]
+    end
+
+    subgraph Metric Fields
+        D1[Impressions Counter]
+        D2[Reactions Counter]
+        D3[Comments Counter]
+        D4[Shares Counter]
+        D5[Click Counter]
+    end
+
+    subgraph Time Options
+        E1[Current Time]
+        E2[Custom Time]
+        E3[Timestamp Display]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> D1 & D2 & D3 & D4 & D5
+    E --> E1 & E2 & E3
+    D & E --> F
+
+    classDef card fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef modal fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef fields fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    
+    class A,B,C card
+    class D,E,F modal
+    class D1,D2,D3,D4,D5,E1,E2,E3 fields
