@@ -1,0 +1,39 @@
+graph TD
+    subgraph Page Layout
+        A[Top Navigation Bar]
+        B[Left Sidebar]
+        C[Main Content Area]
+        D[Right Panel]
+    end
+
+    subgraph Left Sidebar Components
+        B1[All Ideas]
+        B2[Folders]
+        B3[Tags]
+        B4[Recent]
+        B5[Create New]
+    end
+
+    subgraph Main Content Options
+        C1[Grid View]
+        C2[List View]
+        C3[Search Bar]
+        C4[Filter Options]
+    end
+
+    subgraph Right Panel Details
+        D1[Idea Preview]
+        D2[Quick Edit]
+        D3[Actions Menu]
+    end
+
+    A --> B & C & D
+    B --> B1 & B2 & B3 & B4 & B5
+    C --> C1 & C2 & C3 & C4
+    D --> D1 & D2 & D3
+
+    classDef layout fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef components fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    
+    class A,B,C,D layout
+    class B1,B2,B3,B4,B5,C1,C2,C3,C4,D1,D2,D3 components

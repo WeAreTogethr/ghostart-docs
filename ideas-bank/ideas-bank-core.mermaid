@@ -1,0 +1,39 @@
+graph TD
+    subgraph Core Features
+        A[Ideas Bank Dashboard]
+        B[Note Creation]
+        C[Media Upload]
+        D[Idea Organization]
+    end
+
+    subgraph Note Components
+        B1[Rich Text Editor]
+        B2[Title & Tags]
+        B3[Categories]
+        B4[Draft Generation]
+    end
+
+    subgraph Media Handling
+        C1[Image Upload]
+        C2[Screenshot Storage]
+        C3[URL Embedding]
+        C4[PDF Storage]
+    end
+
+    subgraph Organization
+        D1[Folders]
+        D2[Search]
+        D3[Filters]
+        D4[Tags]
+    end
+
+    A --> B & C & D
+    B --> B1 & B2 & B3 & B4
+    C --> C1 & C2 & C3 & C4
+    D --> D1 & D2 & D3 & D4
+
+    classDef phase1 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef phase2 fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+
+    class A,B,C,D phase1
+    class B1,B2,B3,B4,C1,C2,C3,C4,D1,D2,D3,D4 phase2

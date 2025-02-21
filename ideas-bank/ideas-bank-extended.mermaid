@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant U as User
+    participant E as Browser Extension
+    participant M as Email Handler
+    participant A as API
+    participant S as Storage
+    
+    rect rgb(240, 248, 255)
+        Note over U,S: Browser Extension Flow
+        U->>E: Click Extension Button
+        E->>E: Capture Screenshot/Selection
+        E->>A: Send to API
+        A->>S: Store Content
+        S-->>U: Confirm Save
+    end
+    
+    rect rgb(255, 240, 245)
+        Note over U,S: Email Integration Flow
+        U->>M: Send to ideas@ghostart.com
+        M->>A: Process Email
+        A->>A: Extract Content
+        A->>S: Store in Ideas Bank
+        S-->>U: Email Confirmation
+    end

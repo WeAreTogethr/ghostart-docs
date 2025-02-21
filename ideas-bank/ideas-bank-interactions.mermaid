@@ -1,0 +1,30 @@
+sequenceDiagram
+    participant U as User
+    participant L as List View
+    participant E as Editor
+    participant P as Preview
+    
+    rect rgb(240, 248, 255)
+        Note over U,P: Create New Idea
+        U->>L: Click "Create New"
+        L->>E: Open Editor
+        U->>E: Enter Content
+        U->>E: Add Media
+        E->>L: Save Idea
+        L->>P: Show Preview
+    end
+    
+    rect rgb(255, 240, 245)
+        Note over U,P: Manage Existing
+        U->>L: Select Idea
+        L->>P: Show Details
+        U->>P: Edit/Tag
+        P->>L: Update List
+    end
+    
+    rect rgb(240, 255, 240)
+        Note over U,P: Convert to Post
+        U->>P: Click "Create Post"
+        P->>P: Generate Draft
+        P-->>U: Open Post Editor
+    end

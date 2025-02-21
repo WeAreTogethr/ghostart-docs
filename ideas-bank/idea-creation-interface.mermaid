@@ -1,0 +1,35 @@
+graph TD
+    subgraph Creation Modal
+        A[Header Bar]
+        B[Content Area]
+        C[Footer Actions]
+    end
+
+    subgraph Header Components
+        A1[Title Input]
+        A2[Type Selector]
+        A3[Close Button]
+    end
+
+    subgraph Content Types
+        B1[Rich Text Editor]
+        B2[Media Uploader]
+        B3[URL Input]
+        B4[Tags Input]
+    end
+
+    subgraph Footer Options
+        C1[Save Draft]
+        C2[Create Post]
+        C3[Add to Calendar]
+    end
+
+    A --> A1 & A2 & A3
+    B --> B1 & B2 & B3 & B4
+    C --> C1 & C2 & C3
+
+    classDef modal fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef inputs fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    
+    class A,B,C modal
+    class A1,A2,A3,B1,B2,B3,B4,C1,C2,C3 inputs
