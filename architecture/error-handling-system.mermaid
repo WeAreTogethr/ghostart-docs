@@ -1,0 +1,32 @@
+sequenceDiagram
+    participant U as User
+    participant S as System
+    participant L as LinkedIn API
+    participant E as Error Handler
+    participant M as Monitoring
+    
+    rect rgb(240, 248, 255)
+        Note over U,M: API Errors
+        S->>L: API Request
+        L-->>S: Error Response
+        S->>E: Handle Error
+        E->>E: Classify Error
+        E->>S: Retry Strategy
+        E->>M: Log Error
+    end
+    
+    rect rgb(255, 240, 245)
+        Note over U,M: System Errors
+        S->>S: Internal Operation
+        S->>E: Operation Failed
+        E->>M: Alert Admin
+        E->>U: User Friendly Message
+    end
+    
+    rect rgb(240, 255, 240)
+        Note over U,M: Recovery
+        E->>S: Retry Operation
+        S->>L: Retry Request
+        L-->>S: Success
+        S-->>U: Operation Complete
+    end
