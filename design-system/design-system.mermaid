@@ -1,0 +1,32 @@
+graph TD
+    subgraph Core Elements
+        A[Typography]
+        B[Color Palette]
+        C[Spacing System]
+        D[Component Library]
+    end
+
+    subgraph Components
+        E[Navigation]
+        F[Cards & Containers]
+        G[Forms & Inputs]
+        H[Data Visualization]
+    end
+
+    subgraph Layout Patterns
+        I[Dashboard Grids]
+        J[Calendar Views]
+        K[Course Layout]
+        L[Content Feed]
+    end
+
+    A & B & C & D --> E & F & G & H
+    E & F & G & H --> I & J & K & L
+
+    classDef core fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef comp fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef layout fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+
+    class A,B,C,D core
+    class E,F,G,H comp
+    class I,J,K,L layout
