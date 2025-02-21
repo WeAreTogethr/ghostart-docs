@@ -1,0 +1,38 @@
+graph TD
+    subgraph API Available Data
+        A[User Profile]
+        B[Post Creation]
+        C[Post Reference]
+    end
+
+    subgraph Profile Data
+        A1[Email Address]
+        A2[Full Name]
+        A3[Profile Picture]
+        A4[Locale Settings]
+    end
+
+    subgraph Post Creation Data
+        B1[Post ID]
+        B2[Post URL]
+        B3[Timestamp]
+        B4[Post Status]
+    end
+
+    subgraph Manual Metrics
+        C1[Performance Updates]
+        C2[Timestamped Stats]
+        C3[Historical Data]
+    end
+
+    A --> A1 & A2 & A3 & A4
+    B --> B1 & B2 & B3 & B4
+    C --> C1 & C2 & C3
+
+    classDef api fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef profile fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef manual fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+
+    class A,B,C api
+    class A1,A2,A3,A4,B1,B2,B3,B4 profile
+    class C1,C2,C3 manual

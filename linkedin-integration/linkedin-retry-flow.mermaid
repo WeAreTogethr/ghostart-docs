@@ -1,0 +1,43 @@
+sequenceDiagram
+    participant U as User
+    participant S as System
+    participant L as LinkedIn API
+    participant M as Monitoring
+    
+    rect rgb(240, 248, 255)
+        Note over U,M: First Attempt
+        S->>L: API Request
+        alt Success
+            L-->>S: Success Response
+            S-->>U: Action Completed
+        else 5xx Error
+            L-->>S: Server Error
+            S->>M: Log Initial Error
+            Note over S,L: Wait 1 second
+            S->>L: Retry #1
+        end
+    end
+    
+    rect rgb(255, 240, 245)
+        Note over U,M: Auth Error Handling
+        alt 401/403 Error
+            L-->>S: Auth Error
+            S->>S: Refresh Token
+            S->>L: Retry with New Token
+            alt Success
+                L-->>S: Success Response
+            else Still Failed
+                S->>U: Request Reauth
+                S->>M: Log Auth Failure
+            end
+        end
+    end
+    
+    rect rgb(240, 255, 240)
+        Note over U,M: Final Fallback
+        alt All Retries Failed
+            S->>M: Log Complete Failure
+            S->>U: Show Error Message
+            M->>S: Trigger Admin Alert
+        end
+    end

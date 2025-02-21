@@ -1,0 +1,31 @@
+sequenceDiagram
+    participant U as User
+    participant S as System
+    participant L as LinkedIn
+    participant D as Database
+    
+    rect rgb(240, 248, 255)
+        Note over U,D: Post Creation
+        U->>S: Create Post
+        S->>L: Share on LinkedIn
+        L-->>S: Return Post ID & URL
+        S->>D: Store Post Reference
+        S-->>U: Show Success + Link
+    end
+    
+    rect rgb(255, 240, 245)
+        Note over U,D: Performance Update
+        U->>S: View Posts
+        S->>D: Fetch Posts
+        S-->>U: Display with Update Options
+        U->>L: Check Performance (Manual)
+        U->>S: Input Metrics
+        S->>D: Store with Timestamp
+    end
+    
+    rect rgb(240, 255, 240)
+        Note over U,D: Historical View
+        U->>S: View Analytics
+        S->>D: Fetch All Updates
+        S-->>U: Show Performance Over Time
+    end
