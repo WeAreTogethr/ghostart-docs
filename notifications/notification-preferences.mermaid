@@ -1,0 +1,40 @@
+graph TD
+    subgraph Channel Settings
+        A[Email Notifications]
+        B[In-App Alerts]
+        C[Push Notifications]
+    end
+
+    subgraph Notification Types
+        D[Post Performance]
+        E[System Updates]
+        F[Exercise Reminders]
+        G[Content Suggestions]
+    end
+
+    subgraph Frequency Controls
+        H[Immediate]
+        I[Daily Digest]
+        J[Weekly Summary]
+        K[Custom Schedule]
+    end
+
+    subgraph Smart Settings
+        L[AI-Based Timing]
+        M[Priority Filtering]
+        N[Context Awareness]
+    end
+
+    A & B & C --> D & E & F & G
+    D & E & F & G --> H & I & J & K
+    H & I & J & K --> L & M & N
+
+    classDef channels fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef types fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef freq fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef smart fill:#fff3e0,stroke:#e65100,stroke-width:2px
+
+    class A,B,C channels
+    class D,E,F,G types
+    class H,I,J,K freq
+    class L,M,N smart

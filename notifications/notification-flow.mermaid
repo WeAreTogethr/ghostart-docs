@@ -1,0 +1,29 @@
+sequenceDiagram
+    participant U as User
+    participant S as System
+    participant Q as Queue
+    participant E as Email
+    participant A as In-App
+    
+    rect rgb(240, 248, 255)
+        Note over U,A: Post Creation
+        U->>S: Publish Post
+        S->>Q: Schedule Reminders
+        Q->>Q: Create Notification Jobs
+    end
+    
+    rect rgb(255, 240, 245)
+        Note over U,A: Reminder Processing
+        Q->>S: Time to Send
+        S->>E: Send Email (if enabled)
+        S->>A: Send In-App (if enabled)
+        S->>Q: Mark as Sent
+    end
+    
+    rect rgb(240, 255, 240)
+        Note over U,A: User Interaction
+        U->>S: Update Preferences
+        S->>Q: Adjust Schedule
+        U->>S: Update Metrics
+        S->>Q: Reset Reminders
+    end

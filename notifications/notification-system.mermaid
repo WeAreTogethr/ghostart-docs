@@ -1,0 +1,40 @@
+graph TD
+    subgraph Notification Triggers
+        A[Post Publication]
+        B[Time-based Reminders]
+        C[Performance Milestones]
+        D[System Updates]
+    end
+
+    subgraph Delivery Channels
+        E[Email - Resend]
+        F[In-App Notifications]
+        G[Dashboard Prompts]
+    end
+
+    subgraph Reminder Schedule
+        H[24h After Post]
+        I[7 Days After]
+        J[30 Days After]
+        K[Custom Schedule]
+    end
+
+    subgraph User Preferences
+        L[Frequency Settings]
+        M[Channel Selection]
+        N[Opt-out Options]
+    end
+
+    A & B & C & D --> E & F & G
+    E & F & G --> H & I & J & K
+    H & I & J & K --> L & M & N
+
+    classDef triggers fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef channels fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef schedule fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef prefs fill:#fff3e0,stroke:#e65100,stroke-width:2px
+
+    class A,B,C,D triggers
+    class E,F,G channels
+    class H,I,J,K schedule
+    class L,M,N prefs
