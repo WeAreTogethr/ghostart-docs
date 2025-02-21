@@ -1,0 +1,42 @@
+stateDiagram-v2
+    [*] --> NoExercises: New User
+    NoExercises --> PartialExercises: Complete Some Exercises
+    PartialExercises --> AllExercises: Complete All Exercises
+    
+    state NoExercises {
+        [*] --> Generic
+        Generic --> GenerateContent: Use Generic Templates
+        Generic --> StartExercise: Start Exercise
+        GenerateContent --> LowScore: Beige-ometer < 40
+        LowScore --> StartExercise: Prompt to Complete
+    }
+    
+    state PartialExercises {
+        [*] --> SemiPersonalized
+        SemiPersonalized --> GenerateContent2: Use Partial Data
+        SemiPersonalized --> ContinueExercise: Complete More
+        GenerateContent2 --> MediumScore: Beige-ometer 40-80
+        MediumScore --> ContinueExercise: Suggest Completion
+    }
+    
+    state AllExercises {
+        [*] --> FullyPersonalized
+        FullyPersonalized --> GenerateContent3: Use Full Data
+        GenerateContent3 --> HighScore: Beige-ometer > 80
+        HighScore --> Optimize: Suggest Optimizations
+    }
+
+    note right of NoExercises
+        Users can still create content
+        but with limited personalization
+    end note
+
+    note right of PartialExercises
+        System uses available exercise
+        data for partial personalization
+    end note
+
+    note right of AllExercises
+        Full access to AI features
+        and personalization
+    end note

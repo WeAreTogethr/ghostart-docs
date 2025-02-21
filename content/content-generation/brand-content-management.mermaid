@@ -1,0 +1,52 @@
+graph TD
+    subgraph Content Creation
+        A[Brand Manager Creates Content]
+        B[Content Review]
+        C[Content Publishing]
+    end
+
+    subgraph Access Levels
+        D[Admin Access]
+        E[Brand Creator Access]
+        F[Employee Access]
+    end
+
+    subgraph Content Types
+        G[Templates]
+        H[Guidelines]
+        I[Assets]
+    end
+
+    subgraph Visibility Rules
+        J[Organization-Wide]
+        K[Team-Specific]
+        L[Role-Based]
+    end
+
+    A --> B
+    B --> C
+    
+    D -->|Full Control| A
+    D -->|Full Control| B
+    D -->|Full Control| C
+    
+    E -->|Create & Edit| A
+    E -->|Review| B
+    
+    F -->|View & Use| G
+    F -->|View Only| H
+    F -->|Download| I
+    
+    G --> J
+    H --> K
+    I --> L
+
+    classDef creation fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef access fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef types fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef rules fill:#fff3e0,stroke:#e65100,stroke-width:2px
+
+    class A,B,C creation
+    class D,E,F access
+    class G,H,I types
+    class J,K,L rules
