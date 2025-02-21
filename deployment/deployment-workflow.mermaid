@@ -1,0 +1,30 @@
+sequenceDiagram
+    participant D as Developer
+    participant G as GitHub
+    participant V as Vercel
+    participant S as Supabase
+    participant C as CDN
+    
+    rect rgb(240, 248, 255)
+        Note over D,C: Development Phase
+        D->>G: Push to feature branch
+        G->>G: Run SAST & Dependency Checks
+        G->>V: Create Preview Deployment
+        V->>S: Create Preview Database
+    end
+    
+    rect rgb(255, 240, 245)
+        Note over D,C: Staging Phase
+        G->>V: Deploy to Staging
+        V->>V: Run Performance Tests
+        V->>S: Run DB Migrations
+        V->>C: Warm CDN Cache
+    end
+    
+    rect rgb(240, 255, 240)
+        Note over D,C: Production Phase
+        G->>V: Deploy to Production
+        V->>S: Run Production Migrations
+        V->>C: Update CDN Rules
+        C->>C: Cache Invalidation
+    end

@@ -1,0 +1,53 @@
+graph TD
+    subgraph Development
+        A[Local Development]
+        B[Feature Branch]
+        C[Code Review]
+    end
+
+    subgraph Testing
+        D[Staging Deploy]
+        E[Performance Tests]
+        F[Security Scans]
+    end
+
+    subgraph Production
+        G[Blue/Green Deploy]
+        H[CDN Cache]
+        I[Monitor/Alert]
+    end
+
+    subgraph Security Checks
+        J[SAST]
+        K[Dependency Scan]
+        L[Secret Detection]
+    end
+
+    subgraph Performance Checks
+        M[Bundle Analysis]
+        N[Lighthouse CI]
+        O[API Performance]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E & F
+    E --> G
+    F --> G
+    G --> H --> I
+    
+    B --> J & K & L
+    D --> M & N & O
+
+    classDef dev fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef test fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef prod fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef sec fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+    classDef perf fill:#fff3e0,stroke:#e65100,stroke-width:2px
+
+    class A,B,C dev
+    class D,E,F test
+    class G,H,I prod
+    class J,K,L sec
+    class M,N,O perf
